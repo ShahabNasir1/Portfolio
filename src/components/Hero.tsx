@@ -51,17 +51,14 @@ export default function Hero() {
             <p className="text-sm text-gray-500">Years Experience</p>
           </div>
           <div>
-            <p className="text-2xl font-bold">280+</p>
+            <p className="text-2xl font-bold">10+</p>
             <p className="text-sm text-gray-500">Projects</p>
           </div>
           <div>
-            <p className="text-2xl font-bold">99%</p>
-            <p className="text-sm text-gray-500">Client Satisfaction</p>
+            <p className="text-2xl font-bold">90%</p>
+            <p className="text-sm text-gray-500">Skill Improvement Rate</p>
           </div>
-          <div>
-            <p className="text-2xl font-bold">50</p>
-            <p className="text-sm text-gray-500">Clients Worldwide</p>
-          </div>
+          
         </div>
       </div>
     </section>
