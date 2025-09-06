@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ResumeViewer() {
-  const [pdfUrl, setPdfUrl] = useState(null);
+  // Type the state as string | null
+  const [pdfUrl, setPdfUrl] = useState<string | null>(null);
 
-  const handleFileUpload = (event) => {
-    const file = event.target.files[0];
+  // Type the event parameter
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
     if (file && file.type === "application/pdf") {
       const url = URL.createObjectURL(file);
       setPdfUrl(url);
@@ -15,10 +17,19 @@ export default function ResumeViewer() {
     }
   };
 
+  // Cleanup object URL to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      if (pdfUrl) {
+        URL.revokeObjectURL(pdfUrl);
+      }
+    };
+  }, [pdfUrl]);
+
   return (
     <div className="p-6 max-w-4xl mx-auto text-center" id="resume">
       <h2 className="text-2xl font-semibold mb-4">Upload & View Resume</h2>
-      
+
       <input
         type="file"
         accept=".pdf"

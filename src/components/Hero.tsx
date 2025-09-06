@@ -33,7 +33,7 @@ export default function Hero() {
         {/* Left: Text Content */}
         <div className="max-w-lg space-y-6 text-center lg:text-left lg:mr-auto">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            Hey, I’m <span className="text-black">Shahab</span>, <br />
+            Hey, I am <span className="text-black">Shahab</span>, <br />
             A <span className="text-black">Frontend & AI Developer</span>
           </h1>
           <p className="text-black">
